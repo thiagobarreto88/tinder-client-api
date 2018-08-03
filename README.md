@@ -1,14 +1,6 @@
-Utilizar o fiddler para capturar trafego de rede de smartphone
+Como utilizar o fiddler (<a href="https://www.telerik.com/fiddler"Link</a>) para capturar trafego de rede de smartphone
 
 http://www.cantoni.org/2013/11/06/capture-android-web-traffic-fiddler
-
-
-# Tinder API Documentation - 2018
-
-First off, I want to give a shoutout to <a href='https://gist.github.com/rtt/10403467#file-tinder-api-documentation-md'>@rtt</a> and to <a href='https://github.com/fbessez/Tinder'>fbessez </a>
-who initially posted the Tinder API Documentation that I found most of these endpoints on. I am writing this to provide a more up-to-date resource for working with the Tinder API.
-
-**Note: This was updated in June 2018 so it might be outdated.**
 
 OAuth do Facebook
 	
@@ -25,6 +17,7 @@ OAuth do Facebook
 Caso nao consiga recuperar o access_token do Facebook e nem realizar a autenticacao da API do Tinder é possível utilizar o Tinder Web (https://tinder.com) e na aba "Network" do Google Chrome
 verificar os requests internos realizados para as demais APIS e identificar o header "X-Auth-Token" utilizado para realizar as chamadas as outras APIs.
 
+<a href="https://github.com/fbessez/Tinder">API do TINDER</a>
 
 ### API Details
 <table>

@@ -1,4 +1,4 @@
-Como utilizar o fiddler (<a href="https://www.telerik.com/fiddler"Link</a>) para capturar trafego de rede de smartphone
+Como utilizar o fiddler (<a href="https://www.telerik.com/fiddler">Link</a>) para capturar trafego de rede de smartphone
 
 http://www.cantoni.org/2013/11/06/capture-android-web-traffic-fiddler
 

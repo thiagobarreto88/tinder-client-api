@@ -1,7 +1,5 @@
 Como utilizar o fiddler (<a href="https://www.telerik.com/fiddler">Link</a>) para capturar trafego de rede de smartphone
 
-Link: shttp://www.cantoni.org/2013/11/06/capture-android-web-traffic-fiddler
-
 Premissa:
 
 	1. Ter uma conta no facebook

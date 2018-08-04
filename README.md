@@ -36,9 +36,17 @@ Via postman, soapUI, java, etc.
 
 		<ACCESS_TOKEN>: utilizar o access_token gerado no passo acima
 		<FACEBOOK_ID>: Para recuperar o facebook_id abrir a URL no browser: https://graph.facebook.com/me?access_token=<ACCESS_TOKEN> e pegar o valor do campo "id" do JSON retornado.
-		
-	Exemplo:
-		![alt text](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/Auth.png)
+
+		Body (utilizar o access_token gerado no passo acima):
+			{"facebook_token": "<ACCESS_TOKEN>", "facebook_id": "<FACEBOOK_ID>"}
+
+			<ACCESS_TOKEN>: utilizar o access_token gerado no passo acima
+			<FACEBOOK_ID>: Para recupera o facebook_id abrir a URL no browser: https://graph.facebook.com/me?access_token=<ACCESS_TOKEN> e pegar o valor do campo "id" do JSON retornado.
+			
+		Exemplo:
+			![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/Auth.png)
+			
+		IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar a autenticacao da API do Tinder é possível utilizar o Tinder Web (https://tinder.com) e na aba "Network" do Google Chrome verificar os requests internos realizados para as demais APIS e identificar o header "X-Auth-Token" utilizado para realizar as chamadas as outras APIs.
 		
 	IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar a autenticacao da API do Tinder é possível utilizar o Tinder Web (https://tinder.com) e na aba "Network" do Google Chrome verificar os requests internos realizados para as demais APIS e identificar o header "X-Auth-Token" utilizado para realizar as chamadas as outras APIs.
 	

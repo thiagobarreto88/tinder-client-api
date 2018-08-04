@@ -37,18 +37,12 @@ Via postman, soapUI, java, etc.
 		<ACCESS_TOKEN>: utilizar o access_token gerado no passo acima
 		<FACEBOOK_ID>: Para recuperar o facebook_id abrir a URL no browser: https://graph.facebook.com/me?access_token=<ACCESS_TOKEN> e pegar o valor do campo "id" do JSON retornado.
 
-		Body (utilizar o access_token gerado no passo acima):
-			{"facebook_token": "<ACCESS_TOKEN>", "facebook_id": "<FACEBOOK_ID>"}
-
-			<ACCESS_TOKEN>: utilizar o access_token gerado no passo acima
-			<FACEBOOK_ID>: Para recupera o facebook_id abrir a URL no browser: https://graph.facebook.com/me?access_token=<ACCESS_TOKEN> e pegar o valor do campo "id" do JSON retornado.
 			
 Exemplo:
 ![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/Auth.png)
 			
 		IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar a autenticacao da API do Tinder é possível utilizar o Tinder Web (https://tinder.com) e na aba "Network" do Google Chrome verificar os requests internos realizados para as demais APIS e identificar o header "X-Auth-Token" utilizado para realizar as chamadas as outras APIs.
 		
-	IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar a autenticacao da API do Tinder é possível utilizar o Tinder Web (https://tinder.com) e na aba "Network" do Google Chrome verificar os requests internos realizados para as demais APIS e identificar o header "X-Auth-Token" utilizado para realizar as chamadas as outras APIs.
 	
 2. Atualizar a localização para um lugar qualquer do mapa através de latitude e longitude.
 
@@ -67,6 +61,9 @@ Exemplo:
 
 	Para recuperar a latitude e longitude de um lugar é possível usar o site abaixo:
 	https://www.latlong.net/
+	
+![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/UpdateLocation.png)
+
 
 3. Recuperar as recomendações.
 
@@ -76,7 +73,9 @@ Exemplo:
 	
 	Esta API retorna no máximo 11 resultados. O id (campo _id) de cada resultado é utilizar para realizar o like ou dislike.
 	
+![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/Recommendations.png)
 
+	
 4. Dar "likes" nas recomendações.
 	
 	Método HTTP: GET
@@ -84,6 +83,8 @@ Exemplo:
 	Header: X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
 	
 	O {id} deve ser substituido pelo campo _id retornado no passo 3.
+	
+![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/Like.png)
 	
 
 <a href="https://github.com/fbessez/Tinder">Link com detalhe sobre as APIs do TINDER</a>

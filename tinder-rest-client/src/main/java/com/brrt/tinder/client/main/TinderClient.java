@@ -20,6 +20,7 @@ import com.brrt.tinder.client.domain.message.MessageRequest;
 import com.brrt.tinder.client.domain.message.MessageResponse;
 import com.brrt.tinder.client.domain.recs.RecommendationsRequest;
 import com.brrt.tinder.client.domain.recs.RecommendationsResponse;
+import com.brrt.tinder.client.domain.recs.Result;
 import com.brrt.tinder.client.domain.update.location.UpdateLocationRequest;
 import com.brrt.tinder.client.domain.update.location.UpdateLocationResponse;
 import com.brrt.tinder.client.domain.update.profile.UpdateProfileRequest;
@@ -55,12 +56,14 @@ public class TinderClient {
 		messageConverters.add(map);
 		restTemplate.setMessageConverters(messageConverters);
 		 
+		
 		//String facebookToken = "EAAGm0PX4ZCpsBAGiPrKHHqAKHjHWaQPrAups2Gxx8XYfIxzhJj8j2RkgBDAAmZAq4NpoiZBJQjPqntZA2UvM6uiiGFiZBLaKjgSvdjjyTtdFE4mdZCSMVP7G32dO3nynzVJVVfIoZCQmpbPOkA8LmoskzwVAwZAkQ4Hv2bKDGaZAeZCmUOZAv8tLh6ZA";
-		String facebookToken = "EAAGm0PX4ZCpsBAGrFCy2cVMvOvwkPFEzvZC1BDRI9sskUgsiZADrAfAPbxHk5jK5KaSCEsxI7DX05G9M57fLcgvVa01p66bi3prLMcS6el8Utd9Y53bLLU5YcEZCYM7ZAan12VwakqEajeDTPZCarWjvWgviuabA6cfZAGZBipo27cCD6IqgpX0TUZB8SwhECklPK8q67YOsQsZByzh2KZBYmT4l0JjXdem4WGKuZC7YhZBSZC9YkvLLj0xekMNsy9W1nRquUZD";
+		//String facebookToken = "EAAGm0PX4ZCpsBAGrFCy2cVMvOvwkPFEzvZC1BDRI9sskUgsiZADrAfAPbxHk5jK5KaSCEsxI7DX05G9M57fLcgvVa01p66bi3prLMcS6el8Utd9Y53bLLU5YcEZCYM7ZAan12VwakqEajeDTPZCarWjvWgviuabA6cfZAGZBipo27cCD6IqgpX0TUZB8SwhECklPK8q67YOsQsZByzh2KZBYmT4l0JjXdem4WGKuZC7YhZBSZC9YkvLLj0xekMNsy9W1nRquUZD";
+		String facebookToken = "EAAGm0PX4ZCpsBALP9EyfRyCp4YDkvi9lA7Hbr6Y5byFEYCcIduWQPmqxfJlM1GxUK6M4sxbsBXlC6ksv83LCjc5ZCJikhTYDtWBTcvzVyvoW3qsQTJmuLloVbCoKlFW6Nz7AHPSGvGw2VRinjOI0jRDApMrARZAZBecEVZAyG0wkgyCA3yDU4uKv8vWeIGQFtrd8TdOF1CPe9ZAIwRNZC5ZBmqCuqLdeDnqmp4PeXol89x8l1Sr09iJd9TjZA08ZBR2LoZD";
 		String facebookUserId = "100002031514194";
 		
 		//autenticacao
-		AuthenticationResponse authResponse = authenticate(facebookToken, facebookUserId);
+		//AuthenticationResponse authResponse = authenticate(facebookToken, facebookUserId);
 		
 		//Calcula data para pesquisa de updates
 		//activeTime=2016-08-06T04:06:37.957Z
@@ -69,13 +72,13 @@ public class TinderClient {
 		//String lastActivityDateToSearch = getLastActivityDateToSearch(lastActivityDate);
 		
 		//atualiza o token de autenticacao do Tinder para ser utilizado em todos os requests as demais APIs
-		authToken = authResponse.getAuthToken();
-		//authToken = "70f2a276-9f83-4200-a0ac-a5cd4efa6128";
-
+		//authToken = authResponse.getAuthToken();
+		//authToken = "e8b8efda-d08d-4de0-91b3-89abcc795b30";
+		authToken = "0bd31665-ee4c-418a-b643-30ebfda257f5";
 		//tinderUserId = authResponse.getUser().getId();
 		
 		 //Atualiza localizacao  
-		//updateLocation();
+		updateLocation();
 		
 		// Atualiza perfil - Idades desejadas e distancia 
 		//updateProfile(6);
@@ -87,19 +90,19 @@ public class TinderClient {
 		//handleUpdates(updatesRespone, lastActivityDate);
 		
 		/* Recupera as recomendacoes de acordo com o perfil (idades e distancia) */
-		//int i = 0;
-		//while(i < 15){
-		//	i++;
+		/*int i = 0;
+		while(i < 15){
+			i++;
 			RecommendationsResponse response = getRecommendations();
 			
-		/*	if(response != null && response.getResults() != null && !response.getResults().isEmpty()){
+			if(response != null && response.getResults() != null && !response.getResults().isEmpty()){
 				for(Result rec : response.getResults()){
 					//Da Like em uma recomendacao 
 					Object likeResult = likePerson(rec.getId());
 					
 					//Se o like retornou match imediato envia mensagem padrao "Oi, tudo bem?"
 					if(likeResult.toString().contains("match=true")){
-						sendMessage(rec.getId(), "Oi, tudo bem?");
+						//sendMessage(rec.getId(), "Oi, tudo bem?");
 					}
 					
 				}
@@ -180,7 +183,7 @@ public class TinderClient {
 		initObjects();
 		FacebookAuthDomain authDomain = new FacebookAuthDomain();
 		authDomain.setFacebookToken(facebookToken);
-		authDomain.setFacebookId(facebookUserId);
+		//authDomain.setFacebookId(facebookUserId);
 		authDomain.setLocale("pt");
 			
 		HttpEntity<FacebookAuthDomain> entity = new HttpEntity<FacebookAuthDomain>(authDomain, Util.getHeaders(authToken));
@@ -195,12 +198,24 @@ public class TinderClient {
 	public static void updateLocation(){
 		
 		UpdateLocationRequest updateLocationRequest = new UpdateLocationRequest();
-		updateLocationRequest.setLatitude(-23.0);
-		updateLocationRequest.setLongitude(-46.0);
+		updateLocationRequest.setLatitude(19.0822507);
+		//updateLocationRequest.setLatitude(-34.603684);
+
+		//"lat": 19.0822507, "lon": 72.8812041}
+		updateLocationRequest.setLongitude(72.8812041);
+		//updateLocationRequest.setLongitude(-58.381559);
+
 		
 		HttpEntity<UpdateLocationRequest> entity = new HttpEntity<UpdateLocationRequest>(updateLocationRequest, Util.getHeaders(authToken));
 		
 		ResponseEntity<UpdateLocationResponse> response = restTemplate.exchange(URLConstants.updateLocationURL, HttpMethod.POST, entity, UpdateLocationResponse.class);
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			System.out.println(mapper.writeValueAsString(response.getBody()));
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(response);
 		
 	}

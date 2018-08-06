@@ -31,22 +31,20 @@ Via postman, soapUI, java, etc.
 	
 	1.4 Utilizando o inspect do Chrome (F12) verificar as requisiçoes realizadas após clicar no 'OK', é visto uma chamada Ajax (POST) para a URL https://www.facebook.com/v2.6/dialog/oauth/confirm?dpr=1 com o access_token na aba response
 	
-	Exemplo:
 	![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/access_token.png)
 
-	Utilizar o access_token para realizar chamada a API de autenticacao do Tinder conforme detalhado abaixo.
-	Em caso de sucesso "api_token" que é o token interno do Tinder utilizado nas demais APIs do Tinder (busca, like, envio de mensagens, etc) enviadon o header "X-Auth-Token".
+	1.5 Utilizar o access_token para realizar chamada a API de autenticacao do Tinder conforme detalhado abaixo.
 
 	Método HTTP: POST
 	URL: https://api.gotinder.com/auth
 	
 	Body (utilizar o access_token gerado no passo acima):
-		{"facebook_token": "<ACCESS_TOKEN>", "facebook_id": "<FACEBOOK_ID>"}
+		{"facebook_token": "<ACCESS_TOKEN>"}
 
 		<ACCESS_TOKEN>: utilizar o access_token gerado no passo acima
-		<FACEBOOK_ID>: Para recuperar o facebook_id abrir a URL no browser: https://graph.facebook.com/me?access_token=<ACCESS_TOKEN> e pegar o valor do campo "id" do JSON retornado.
-
-			
+		
+	Em caso de sucesso será retornado o "api_token" que é o token interno do Tinder utilizado nas demais APIs do Tinder (busca, like, envio de mensagens, etc) enviado no header "X-Auth-Token".
+	
 Exemplo:
 ![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/Auth.png)
 			

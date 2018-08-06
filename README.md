@@ -23,8 +23,16 @@ Via postman, soapUI, java, etc.
 		https://www.facebook.com/v2.6/dialog/oauth?redirect_uri=fb464891386855067%3A%2F%2Fauthorize%2F&display=touch&state=%7B%22challenge%22%3A%22IUUkEUqIGud332lfu%252BMJhxL4Wlc%253D%22%2C%220_auth_logger_id%22%3A%2230F06532-A1B9-4B10-BB28-B29956C71AB1%22%2C%22com.facebook.sdk_client_state%22%3Atrue%2C%223_method%22%3A%22sfvc_auth%22%7D&scope=user_birthday%2Cuser_photos%2Cuser_education_history%2Cemail%2Cuser_relationship_details%2Cuser_friends%2Cuser_work_history%2Cuser_likes&response_type=token%2Csigned_request&default_audience=friends&return_scopes=true&auth_type=rerequest&client_id=464891386855067&ret=login&sdk=ios&logger_id=30F06532-A1B9-4B10-BB28-B29956C71AB1&ext=1470840777&hash=AeZqkIcf-NEW6vBd
 		
 	1.2 Realizar login do facebook com usuário e senha
-	1.3 Utilizando o inspect do Chrome (F12) verificar as requisiçoes realizadas
-		Após clicar no 'OK', é visto uma chamada Ajax (POST) para a URL https://www.facebook.com/v2.6/dialog/oauth/confirm?dpr=1 com o access_token na aba response
+	
+	1.3 Aceitar os termos
+	
+	Exemplo:
+	![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/Aceite_Termos_oauth.png)
+	
+	1.4 Utilizando o inspect do Chrome (F12) verificar as requisiçoes realizadas após clicar no 'OK', é visto uma chamada Ajax (POST) para a URL https://www.facebook.com/v2.6/dialog/oauth/confirm?dpr=1 com o access_token na aba response
+	
+	Exemplo:
+	![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/access_token.png)
 
 	Utilizar o access_token para realizar chamada a API de autenticacao do Tinder conforme detalhado abaixo.
 	Em caso de sucesso "api_token" que é o token interno do Tinder utilizado nas demais APIs do Tinder (busca, like, envio de mensagens, etc) enviadon o header "X-Auth-Token".

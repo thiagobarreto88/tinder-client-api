@@ -69,8 +69,11 @@ Exemplo:
 	Para recuperar a latitude e longitude de um lugar é possível usar o site abaixo:
 	https://www.latlong.net/
 	
-![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/UpdateLocation.png)
+	Postman:
+	![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/UpdateLocation_Postman.png)
 
+	SoapUI:
+	![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/UpdateLocation_SoapUI.png)
 
 3. Recuperar as recomendações.
 

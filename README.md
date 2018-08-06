@@ -48,7 +48,7 @@ Via postman, soapUI, java, etc.
 Exemplo:
 ![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/Auth.png)
 			
-		IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar a autenticacao da API do Tinder é possível utilizar o Tinder Web (https://tinder.com) e na aba "Network" do Google Chrome verificar os requests internos realizados para as demais APIS e identificar o header "X-Auth-Token" utilizado para realizar as chamadas as outras APIs.
+	IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar a autenticacao da API do Tinder é possível utilizar o Tinder Web (https://tinder.com) e na aba "Network" do Google Chrome verificar os requests internos realizados para as demais APIS e identificar o header "X-Auth-Token" utilizado para realizar as chamadas as outras APIs.
 		
 	
 2. Atualizar a localização para um lugar qualquer do mapa através de latitude e longitude.

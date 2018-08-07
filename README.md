@@ -36,13 +36,13 @@ Via postman, soapUI, java, etc.
 
 	1.5 Utilizar o access_token para realizar chamada a API de autenticacao do Tinder conforme detalhado abaixo.
 
-	Método HTTP: POST
-	URL: https://api.gotinder.com/auth
+		Método HTTP: POST
+		URL: https://api.gotinder.com/auth
 	
-	Body (utilizar o access_token gerado no passo acima):
-		{"facebook_token": "<ACCESS_TOKEN>"}
+		Body (utilizar o access_token gerado no passo acima):
+			{"facebook_token": "<ACCESS_TOKEN>"}
 
-		<ACCESS_TOKEN>: utilizar o access_token gerado no passo acima
+			<ACCESS_TOKEN>: utilizar o access_token gerado no passo acima
 		
 	Em caso de sucesso será retornado o "api_token" que é o token interno do Tinder utilizado nas demais APIs do Tinder (busca, like, envio de mensagens, etc) enviado no header "X-Auth-Token".
 	
@@ -54,13 +54,13 @@ IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar
 	
 2. Atualizar a localização para um lugar qualquer do mapa através de latitude e longitude.
 
-	Método HTTP: POST
-	URL: https://api.gotinder.com/user/ping
-	Headers: 
-		X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
-		User-Agent: Tinder Android Version 5.3.4
-	Body (exemplo de latitude e longitude da India):
-		{"lat": 19.0822507, "lon": 72.8812041}
+		Método HTTP: POST
+		URL: https://api.gotinder.com/user/ping
+		Headers: 
+			X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
+			User-Agent: Tinder Android Version 5.3.4
+		Body (exemplo de latitude e longitude da India):
+			{"lat": 19.0822507, "lon": 72.8812041}
 
 	Sucesso: {"status":"200","error":null}
 	Erro:  { "status": 200, "error": "major position change not significant"} - ESTE ERRO OCORRE QUANDO A SUA POSICAO NAO MUDOU SIGNIFICAMENTE
@@ -76,9 +76,9 @@ IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar
 
 3. Recuperar as recomendações.
 
-	Método HTTP: GET
-	URL: https://api.gotinder.com/user/recs
-	Header: X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
+		Método HTTP: GET
+		URL: https://api.gotinder.com/user/recs
+		Header: X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
 	
 	Esta API retorna no máximo 11 resultados. O id (campo _id) de cada resultado é utilizar para realizar o like ou dislike.
 	
@@ -87,9 +87,9 @@ IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar
 	
 4. Dar "likes" nas recomendações.
 	
-	Método HTTP: GET
-	URL: https://api.gotinder.com/like/{id} 
-	Header: X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
+		Método HTTP: GET
+		URL: https://api.gotinder.com/like/{id} 
+		Header: X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
 	
 	O {id} deve ser substituido pelo campo _id retornado no passo 3.
 	

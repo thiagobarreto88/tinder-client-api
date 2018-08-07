@@ -56,7 +56,7 @@ public class TinderClient {
 		messageConverters.add(map);
 		restTemplate.setMessageConverters(messageConverters);
 		 
-		String facebookToken = "EAAGm0PX4ZCpsBALP9EyfRyCp4YDkvi9lA7Hbr6Y5byFEYCcIduWQPmqxfJlM1GxUK6M4sxbsBXlC6ksv83LCjc5ZCJikhTYDtWBTcvzVyvoW3qsQTJmuLloVbCoKlFW6Nz7AHPSGvGw2VRinjOI0jRDApMrARZAZBecEVZAyG0wkgyCA3yDU4uKv8vWeIGQFtrd8TdOF1CPe9ZAIwRNZC5ZBmqCuqLdeDnqmp4PeXol89x8l1Sr09iJd9TjZA08ZBR2LoZD";
+		String facebookToken = "EAAGm0PX4ZCpsBAFVFynHKbY0SQ41sQWXYzXAL8frHMOIq1iLAZAC0Cp45XWbZCCYQl8qa3bLnrWS3zVGDz33x1ZAFQiiQwkxoR82ZBf309AsNMopvG1pu9sVZCYEEaZBbTZCMTDyxoPgqiKBtPVhrhoS5ZBZCcCd0x9ubyXiWFVi8A59Yg2TGeQK7OT0u2WszV0hUptgM7tPu9sksFZAlGbKne7NEYjx6xLYB96PXSOq3a4ZB31MCH1d4qwfMrPhp7Ueef2jrMyl8NetgTUrKEv5d5jF";
 		String facebookUserId = "100002031514194";
 		
 		//Autenticacao do Tinder
@@ -65,8 +65,8 @@ public class TinderClient {
 		//Calcula data para pesquisa de updates
 		//activeTime=2016-08-06T04:06:37.957Z
 		//{"last_activity_date":"2016-08-06T13:18:16.911Z"}
-		//String lastActivityDate= authResponse.getUser().getActiveTime();
-		//String lastActivityDateToSearch = getLastActivityDateToSearch(lastActivityDate);
+		String lastActivityDate= authResponse.getUser().getActiveTime();
+		String lastActivityDateToSearch = getLastActivityDateToSearch(lastActivityDate);
 		
 		//atualiza o token de autenticacao do Tinder para ser utilizado em todos os requests as demais APIs
 		//authToken = authResponse.getAuthToken();
@@ -83,7 +83,7 @@ public class TinderClient {
 		// Recupera as atualizacoes (Matches, mensagens)  
 		//FIXME alterar para recuperar as ultimas atualizacoes
 		//ESTA FIXO UMA DATA 
-		//UpdatesResponse updatesRespone = getUpdates(lastActivityDateToSearch);
+		UpdatesResponse updatesRespone = getUpdates(lastActivityDateToSearch);
 		//handleUpdates(updatesRespone, lastActivityDate);
 		
 		/* Recupera as recomendacoes de acordo com o perfil (idades e distancia) */

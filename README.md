@@ -3,10 +3,9 @@ Como utilizar o fiddler (<a href="https://www.telerik.com/fiddler">Link</a>) par
 Premissa:
 
 	1. Ter uma conta no facebook
-	2. Já ter realizado o login no tinder no mínimo uma vez.
 	
 
-Desafio: 
+Desafio(?): 
 
 Via postman, soapUI, java, etc.
 
@@ -14,6 +13,7 @@ Via postman, soapUI, java, etc.
 	2. Atualizar a localização para um lugar qualquer do mapa através de latitude e longitude (só consegui fazer via java e via SoapUI).
 	3. Recuperar as recomendações.
 	4. Dar "likes" nas recomendações.
+	5. Verificar a quantidade de matches recebidos.
 
 	
 1. Autenticar no Tinder
@@ -88,7 +88,7 @@ IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar
 4. Dar "likes" nas recomendações.
 	
 	Método HTTP: GET
-	URL: https://api.gotinder.com//like/{id} 
+	URL: https://api.gotinder.com/like/{id} 
 	Header: X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
 	
 	O {id} deve ser substituido pelo campo _id retornado no passo 3.
@@ -97,3 +97,15 @@ IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar
 	
 
 <a href="https://github.com/fbessez/Tinder">Link com detalhe sobre as APIs do TINDER</a>
+
+5. Verificar a quantidade de matches recebidos.
+	
+	Método HTTP: POST
+	URL: https://api.gotinder.com/updates
+	Headers: 
+		X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
+		User-Agent: Tinder/7.5.3 (iPhone; iOS 10.3.2; Scale/2.00)
+		Body: {"last_activity_date": ""} Input a timestamp: '2017-03-25T20:58:00.404Z' for updates since that time.
+		
+	
+	![Image description](https://github.com/thiagobarreto88/tinder-client-api/blob/master/Prints/GetUpdates.png)

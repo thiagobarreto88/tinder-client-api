@@ -100,11 +100,11 @@ IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar
 
 5. Verificar a quantidade de matches recebidos.
 	
-	Método HTTP: POST
-	URL: https://api.gotinder.com/updates
-	Headers: 
-		X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
-		User-Agent: Tinder/7.5.3 (iPhone; iOS 10.3.2; Scale/2.00)
+		Método HTTP: POST
+		URL: https://api.gotinder.com/updates
+		Headers: 
+			X-Auth-Token: <TOKEN GERADO NA AUTENTICACAO DO TINDER, NAO É O ACCESS_TOKEN>
+			User-Agent: Tinder/7.5.3 (iPhone; iOS 10.3.2; Scale/2.00)
 		Body: {"last_activity_date": ""} Input a timestamp: '2017-03-25T20:58:00.404Z' for updates since that time.
 		
 	

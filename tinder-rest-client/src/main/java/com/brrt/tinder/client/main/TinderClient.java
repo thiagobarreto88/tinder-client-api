@@ -56,14 +56,11 @@ public class TinderClient {
 		messageConverters.add(map);
 		restTemplate.setMessageConverters(messageConverters);
 		 
-		
-		//String facebookToken = "EAAGm0PX4ZCpsBAGiPrKHHqAKHjHWaQPrAups2Gxx8XYfIxzhJj8j2RkgBDAAmZAq4NpoiZBJQjPqntZA2UvM6uiiGFiZBLaKjgSvdjjyTtdFE4mdZCSMVP7G32dO3nynzVJVVfIoZCQmpbPOkA8LmoskzwVAwZAkQ4Hv2bKDGaZAeZCmUOZAv8tLh6ZA";
-		//String facebookToken = "EAAGm0PX4ZCpsBAGrFCy2cVMvOvwkPFEzvZC1BDRI9sskUgsiZADrAfAPbxHk5jK5KaSCEsxI7DX05G9M57fLcgvVa01p66bi3prLMcS6el8Utd9Y53bLLU5YcEZCYM7ZAan12VwakqEajeDTPZCarWjvWgviuabA6cfZAGZBipo27cCD6IqgpX0TUZB8SwhECklPK8q67YOsQsZByzh2KZBYmT4l0JjXdem4WGKuZC7YhZBSZC9YkvLLj0xekMNsy9W1nRquUZD";
 		String facebookToken = "EAAGm0PX4ZCpsBALP9EyfRyCp4YDkvi9lA7Hbr6Y5byFEYCcIduWQPmqxfJlM1GxUK6M4sxbsBXlC6ksv83LCjc5ZCJikhTYDtWBTcvzVyvoW3qsQTJmuLloVbCoKlFW6Nz7AHPSGvGw2VRinjOI0jRDApMrARZAZBecEVZAyG0wkgyCA3yDU4uKv8vWeIGQFtrd8TdOF1CPe9ZAIwRNZC5ZBmqCuqLdeDnqmp4PeXol89x8l1Sr09iJd9TjZA08ZBR2LoZD";
 		String facebookUserId = "100002031514194";
 		
-		//autenticacao
-		//AuthenticationResponse authResponse = authenticate(facebookToken, facebookUserId);
+		//Autenticacao do Tinder
+		AuthenticationResponse authResponse = authenticate(facebookToken, facebookUserId);
 		
 		//Calcula data para pesquisa de updates
 		//activeTime=2016-08-06T04:06:37.957Z

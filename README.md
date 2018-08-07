@@ -54,8 +54,6 @@ IMPORTANTE: Caso nao consiga recuperar o access_token do Facebook e nem realizar
 	
 2. Atualizar a localização para um lugar qualquer do mapa através de latitude e longitude.
 
-	EU SÓ CONSEGUI FAZER FUNCIONAR VIA SOAPUI E VIA JAVA, por algum motivo via Postman não funciona. Acho que é o User-Agent do Chrome que gera o erro.
-
 	Método HTTP: POST
 	URL: https://api.gotinder.com/user/ping
 	Headers: 

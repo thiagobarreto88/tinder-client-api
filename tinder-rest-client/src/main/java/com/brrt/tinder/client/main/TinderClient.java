@@ -74,11 +74,11 @@ public class TinderClient {
 		//atualiza o token de autenticacao do Tinder para ser utilizado em todos os requests as demais APIs
 		//authToken = authResponse.getAuthToken();
 		//authToken = "e8b8efda-d08d-4de0-91b3-89abcc795b30";
-		authToken = "0bd31665-ee4c-418a-b643-30ebfda257f5";
+		authToken = "6e7accc0-d1cb-4c9a-baf0-620216a26fb3";
 		//tinderUserId = authResponse.getUser().getId();
 		
 		 //Atualiza localizacao  
-		updateLocation();
+		//updateLocation();
 		
 		// Atualiza perfil - Idades desejadas e distancia 
 		//updateProfile(6);
@@ -108,9 +108,12 @@ public class TinderClient {
 				}
 			}
 		}*/
+		
+		LikeResponse likeResult = likePerson("5b43acde6ac7bb08232f3cb5");
+		
 			
 	}
-
+	
 	private static String getLastActivityDateToSearch(String lastActivityDate) {
 		System.out.println(lastActivityDate);
 		String[] split = lastActivityDate.split("T");
